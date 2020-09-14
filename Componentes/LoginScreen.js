@@ -211,8 +211,8 @@ export default class LoginScreen extends React.Component {
               <StatusBar backgroundColor={ globalVars.fondoPrincipal } barStyle="light-content" />
               <View style={{ width: '100%', height: screenHeight/7, justifyContent: 'center',
                               alignContent: 'center', alignItems: 'center', backgroundColor: globalVars.fondoPrincipal }}>
-                <Text style={{ fontSize: 20, fontWeight: '800', color: '#FFF' }}>Elaniin Test</Text>
-                <Text style={{ fontSize: 16, color: '#FFF', fontWeight: '400', marginTop: 10 }}>Rony Santos</Text>
+                <Text style={{ fontSize: 20, fontWeight: '800', color: '#FFF', fontFamily: globalVars.fontTitle }}>Elaniin Test</Text>
+                <Text style={{ fontSize: 16, color: '#FFF', fontWeight: '400', marginTop: 10, fontFamily: globalVars.fontTitle }}>Rony Santos</Text>
               </View>
               
               <View style={{ height: screenHeight - 150, justifyContent: 'center', alignContent: 'center',
@@ -223,16 +223,10 @@ export default class LoginScreen extends React.Component {
                     onPress={ () => { this.signInWithGoogleAsync() }}
                     >
                   <Text style={ styles.textButton }>Iniciar con Google</Text>
+                  <AntDesign name="googleplus" size={20} style={{ position: 'absolute', right: 25 }} color="#FFF"/>
                 </TouchableOpacity>
 
                 <View style={{ width: '100%', height: 20 }}></View>
-
-                <TouchableOpacity
-                    style={ styles.buttonF }
-                    onPress={ () => { }}
-                    >
-                  <Text style={ styles.textButton }>Iniciar con Facebook</Text>
-                </TouchableOpacity>
 
               </View>
             
@@ -265,6 +259,8 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       borderRadius: 25,
       backgroundColor: '#C0392B',
+      flexDirection: 'row', 
+      position: 'relative'
     }, 
 
     buttonF: {
@@ -281,7 +277,8 @@ const styles = StyleSheet.create({
     textButton: {
       color: '#FFF',
       fontWeight: '500',
-      fontSize: 18
+      fontSize: 18,
+      fontFamily: globalVars.fontTitle
     }
 
 });
