@@ -21,11 +21,16 @@ console.ignoredYellowBox = ['Warning:'];
 const firebaseConfig = globalVars.firebaseConfig;
 firebase.initializeApp(firebaseConfig);
 
+
 export default function App() {
 
   let [fontsLoaded] = useFonts({
     "Montserrat": require("./Componentes/font/Montserrat.ttf"),
-   });
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <NavigationContainer>
