@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "Elaniin Test",
+    "slug": "elaniin-test",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.1",
+    "orientation": "default",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "facebookAppId": "1449421158781063",
+    "facebookDisplayName": "Test",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ro.elaniintest",
+      "buildNumber": "2.0.0",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.ro.elaniintest",
+      "versionCode": 2,
+      "permissions": [
+        "READ_PHONE_STATE",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png",
+    },
+    "description": "Test"
+  }
+}
