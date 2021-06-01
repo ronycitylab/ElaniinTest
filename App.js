@@ -1,48 +1,26 @@
 import * as React from 'react';
-import Constants from 'expo-constants';
-import { Ionicons } from '@expo/vector-icons';
-import { AsyncStorage, Button, Text, TextInput, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { LogBox } from 'react-native';
+
 import { useFonts } from "expo-font";
 
-import * as firebase from 'firebase';
+import AppLoading from 'expo-app-loading';
 
-import HomeScreen from './Componentes/HomeScreen';
-import DetailScreen from './Componentes/DetailScreen';
-import LoginScreen from './Componentes/LoginScreen';
-import TeamsScreen from './Componentes/TeamsScreen';
-import globalVars from './globalVars';
+import RootApp from './src/navigation/RootApp';
 
-const Stack = createStackNavigator();
-console.ignoredYellowBox = ['Warning:'];
+const App = () => {
+    /** Ignore Yellow Box Warning */
+    LogBox.ignoreAllLogs();
 
-const firebaseConfig = globalVars.firebaseConfig;
-firebase.initializeApp(firebaseConfig);
+    let [fontsLoaded] = useFonts({
+        "Montserrat": require("./assets/fonts/Montserrat.ttf"),
+    });
 
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    }
+    
+    return <RootApp />;
+};  
 
-export default function App() {
-
-  let [fontsLoaded] = useFonts({
-    "Montserrat": require("./Componentes/font/Montserrat.ttf"),
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-          screenOptions={{
-             }} >
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Teams" component={TeamsScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Detail" component={DetailScreen} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-
-}
+export default App;
