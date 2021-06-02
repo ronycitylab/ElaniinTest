@@ -11,7 +11,7 @@ const StatusBarComponent = (props) => {
 
     return (
         <StatusBar 
-            backgroundColor={ globalVars.firstColor } 
+            backgroundColor={ globalVars.bluePantone } 
             style={ Platform.OS !== 'ios' ? "light" : "dark" } />
     );
 }

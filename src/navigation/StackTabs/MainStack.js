@@ -8,14 +8,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AntDesign } from '@expo/vector-icons'; 
 
 /** Import Main Stack Screens */
-import InitialScreen from '../../screens/InitialScreen';
-import LoginScreen from '../../screens/LoginScreen';
-import SignupScreen from '../../screens/SignupScreen';
-import CategoriesScreen from '../../screens/CategoriesScreen';
-import ProductScreen from '../../screens/ProductScreen';
 
 /** Import Header Stack Component */
 import CustomHeaderStack from '../../components/organisms/CustomHeaderStack';
+
+import DetailScreen from '../../screens/DetailScreen';
 
 /** Import Theme */
 import { MyTheme, Styles } from './style';
@@ -32,39 +29,6 @@ const MainStack = ({TabBottom, redirect}) => {
         <NavigationContainer theme={MyTheme} >
             <Stack.Navigator initialRouteName={ redirect } >
                 <Stack.Screen
-                    name="Initial"
-                    component={ InitialScreen }
-                    options={{ headerShown: false }}
-                /> 
-                <Stack.Screen
-                    name="Login"
-                    component={ LoginScreen }
-                    options={{
-                        headerShown: Platform.OS === 'ios' ? true : false,
-                        headerStyle: {
-                            backgroundColor: 'transparent',
-                        },
-                        headerTintColor: 'transparent',
-                        header: ({ scene, previous, navigation }) => (
-                            <CustomHeaderStack scene={scene} previous={previous} navigation={navigation} />
-                        ),
-                    }}
-                />
-                <Stack.Screen
-                    name="Signup"
-                    component={ SignupScreen }
-                    options={{
-                        headerShown: Platform.OS === 'ios' ? true : false,
-                        headerStyle: {
-                            backgroundColor: 'transparent',
-                        },
-                        headerTintColor: 'transparent',
-                        header: ({ scene, previous, navigation }) => (
-                            <CustomHeaderStack scene={scene} previous={previous} navigation={navigation} />
-                        ),
-                    }}
-                />
-                <Stack.Screen
                     name="Home"
                     component={ TabBottom }
                     options={{
@@ -79,30 +43,16 @@ const MainStack = ({TabBottom, redirect}) => {
                     }}
                 />
                 <Stack.Screen
-                    name="Categories"
-                    component={ CategoriesScreen }
+                    name="Detail"
+                    component={ DetailScreen }
                     options={{
-                        headerShown: true,
+                        headerShown: false,
                         headerStyle: {
                             backgroundColor: 'transparent',
                         },
                         headerTintColor: 'transparent',
                         header: ({ scene, previous, navigation }) => (
-                            <CustomHeaderStack scene={scene} previous={previous} navigation={navigation} isCustomTop isCategorie />
-                        ),
-                    }}
-                />
-                <Stack.Screen
-                    name="Product"
-                    component={ ProductScreen }
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: 'transparent',
-                        },
-                        headerTintColor: 'transparent',
-                        header: ({ scene, previous, navigation }) => (
-                            <CustomHeaderStack scene={scene} previous={previous} navigation={navigation} isCustomTop />
+                            <CustomHeaderStack scene={scene} previous={previous} navigation={navigation} />
                         ),
                     }}
                 />

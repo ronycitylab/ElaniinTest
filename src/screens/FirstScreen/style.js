@@ -18,7 +18,7 @@ const Styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: Constants.statusBarHeight,
+        // paddingTop: Constants.statusBarHeight,
         paddingBottom: 0,
         // paddingHorizontal: 20,
     },
@@ -29,9 +29,9 @@ const Styles = StyleSheet.create({
     },
 
     contentContainer: {
-        paddingTop: Constants.statusBarHeight,
+        // paddingTop: Constants.statusBarHeight,
         paddingBottom: 30, //TODO
-        // paddingHorizontal: 20,
+        paddingHorizontal: 20,
         justifyContent: 'center', 
         alignItems: 'center', 
         alignContent: 'center',

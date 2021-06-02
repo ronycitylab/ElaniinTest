@@ -310,7 +310,7 @@ export default class HomeScreen extends React.Component {
 
             }).catch((error) => { 
                 console.log(error); 
-              });
+            });
 
           }else{
 

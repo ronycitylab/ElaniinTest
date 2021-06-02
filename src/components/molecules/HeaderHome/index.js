@@ -1,19 +1,10 @@
 import * as React from 'react';
 import { 
-    View, TouchableOpacity, Text,
-    Platform,
+    View, Text,
 } from 'react-native';
-import { SearchBar } from 'react-native-elements';
-
-import AsyncStorage from '@react-native-community/async-storage';
-
-/** Import Translations */
-import TranslateText from '../../../utils/useTranslations';
 
 /** Import Componentes Custom */
 import TitleComponent from '../../atoms/Titles';
-import BlueTextComponent from '../../atoms/BlueText';
-import LabelTextComponent from '../../atoms/LabelText';
 
 /** Import Global Variables */
 import GlobalVars from '../../../global/globalVars';
@@ -22,7 +13,7 @@ import GlobalVars from '../../../global/globalVars';
 import Styles from './style';
 
 const styles = Styles;
-export default function HeaderHomeComponent({name, question = "", searchlabel = "Buscar", lang = "es", ...props}) {
+export default function HeaderHomeComponent(props) {
 
     const [ printLabel, setPrintlabel ] = React.useState('');
 
@@ -35,51 +26,18 @@ export default function HeaderHomeComponent({name, question = "", searchlabel = 
         var curHr = today.getHours();
         
         if (curHr < 12) {
-            // console.log('good morning');
-            return ( TranslateText(lang, 'buenos dias') + ' ' + name + ',' );
-
+            return ( TranslateText(lang, 'buenos dias') );
         } else if (curHr < 18) {
-            // console.log('good afternoon');
-            return ( TranslateText(lang, 'buenas tardes') + ' ' + name + ',' );
+            return ( TranslateText(lang, 'buenas tardes') );
         } else {
-            // console.log('good evening');
-            return( TranslateText(lang, 'buenas noches') + ' ' + name + ',' );
-        }
-    }
-
-    const returnAction = () => {
-        if( props.Action){
-            props.Action();
+            return( TranslateText(lang, 'buenas noches') );
         }
     }
 
     return (
-        <View style={ styles.rootView } >
-            <View style={styles.container} > 
-                { <TitleComponent title={ setearDayLabel() } color={GlobalVars.grisColor} size={20} /> }
-                <BlueTextComponent text={question} color={GlobalVars.bluePantone} size={16} />
-                <TouchableOpacity 
-                    style={ styles.touchableStyle }
-                    onPress={ () => { returnAction() }} >
-                    <SearchBar
-                        placeholder={searchlabel}
-                        value=""
-                        underlineColorAndroid="transparent"
-                        editable={false}
-                        lightTheme={true}
-                        containerStyle={ styles.containerSearch }
-                        inputContainerStyle={ styles.inputContainerStyle }
-                        inputStyle={ styles.inputStyle }
-                        leftIconContainerStyle={ styles.leftIconContainerStyle } />
-                        {
-                            Platform.OS !== 'ios'
-                            ?
-                            null
-                            :
-                            <Text style={ styles.textSearch }>{searchlabel}</Text>
-                        }
-                </TouchableOpacity>
-            </View>
+        <View style={ styles.rootView }>
+            <TitleComponent color={GlobalVars.white} title="Elaniin" size={20} />
+            <TitleComponent color={GlobalVars.white} title="Bienvenido" size={18} />
         </View>
     );
 }

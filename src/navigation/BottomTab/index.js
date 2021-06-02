@@ -5,9 +5,8 @@ import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import FirstScreen from '../../screens/FirstScreen';
-import CheckoutScreen from '../../screens/CheckoutScreen';
-import WishScreen from '../../screens/WishScreen';
-import MenuScreen from '../../screens/MenuScreen';
+import TeamsScreen from '../../screens/TeamsScreen';
+import DetailScreen from '../../screens/DetailScreen';
 
 import GlobalStyles from '../../global/globalVars';
 import Styles from './style';
@@ -20,7 +19,7 @@ function TabBottom() {
       <Tab.Navigator
         tabBarOptions={{
           inactiveTintColor: '#EEEEEE',
-          activeTintColor: GlobalStyles.firstColor,
+          activeTintColor: GlobalStyles.bluePantone,
           showLabel: false,
         }}       
         screenOptions={({ route }) => ({
@@ -29,13 +28,10 @@ function TabBottom() {
         })}
         barStyle={{ backgroundColor: '#000' }}
       >
-        
-     
+
         <Tab.Screen name="Inicio" component={FirstScreen} />
-        <Tab.Screen name="Cart" component={CheckoutScreen} />
-        <Tab.Screen name="Wish" component={WishScreen} />
-        <Tab.Screen name="User" component={FirstScreen} />
-        <Tab.Screen name="Menu" component={MenuScreen} />
+        <Tab.Screen name="Teams" component={TeamsScreen} />
+
       </Tab.Navigator>
     );
 }
@@ -48,19 +44,11 @@ function screenOptions(route, color, focused) {
             iconName = 'home-variant-outline';
             type = 'materialcomm';
             break;
-        case 'Cart':
-            iconName = 'cart-outline';
-            type = 'materialcomm';
-            break;
-        case 'Wish':
+        case 'Teams':
             iconName = 'heart-outline';
             type = 'materialcomm';
             break;
-        case 'User':
-              iconName = 'user';
-              type = 'feather';
-              break;
-        case 'Menu':
+        case 'Detail':
             iconName = 'menu';
             type = 'feather';
             break;
@@ -75,7 +63,7 @@ function screenOptions(route, color, focused) {
         return (
           <View style={styles.viewOptions} >
               <View style={styles.viewContent} >
-                  <MaterialCommunityIcons name={iconName} size={28} color={ GlobalStyles.firstColor } />
+                  <MaterialCommunityIcons name={iconName} size={28} color={ GlobalStyles.bluePantone } />
               </View>
           </View>
         )

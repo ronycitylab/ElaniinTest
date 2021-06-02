@@ -6,36 +6,20 @@ const GlobalVars = {
 	/** Tracking & Register Config */
     firebaseConfig: {
 
-		apiKey: "AIzaSyAZJWe97vZqOZOipGdjnoMieo45mmAEjBE",
-		authDomain: "tgapp-8099d.firebaseapp.com",
-		projectId: "tgapp-8099d",
-		storageBucket: "tgapp-8099d.appspot.com",
-		messagingSenderId: "879554585787",
-		appId: "1:879554585787:web:8925072ac9a5aee318759e",
-		measurementId: "G-0EXE1TGR0S"
+		apiKey: "AIzaSyALvDDhkzU28lHE8aA85HNAzkYFNQe7ZII",
+		authDomain: "elaniintest-724db.firebaseapp.com",
+		databaseURL: "https://elaniintest-724db-default-rtdb.firebaseio.com",
+		projectId: "elaniintest-724db",
+		storageBucket: "elaniintest-724db.appspot.com",
+		messagingSenderId: "938309370737",
+		appId: "1:938309370737:web:c69748c116f4a0a45aacd0",
+		measurementId: "G-0PH8RWZ122"
 	    
 	},
 
-	/** OAuth Android Client */
-	androidClientId: '879554585787-rvci6rgla52te0d6ce6kghq1mnmn9gbt.apps.googleusercontent.com',
-
-	/** OAuth adicional */
-	expoClientIDGoogleSign: '879554585787-mvlakf0c4dth9cpaauo98235tff9lg5v.apps.googleusercontent.com',
-
-
-	/** SHA1 */
-	SHA1: '36:08:51:29:F7:B7:96:B7:66:77:E6:56:90:93:7C:DD:2D:44:D2:4B',
-
-	/** SHA256 */
-	SHA256: 'CA:00:0E:FB:60:A3:04:AD:33:75:3C:54:C8:23:B7:F2:B5:4F:BE:4F:BB:F5:E9:D4:D7:E2:85:18:27:DA:48:21',
-
 
 	/** API PATH **/
-	urlapi: 'https://tg-sap-p8443.ondigitalocean.app/api',
-
-
-	/** KEY REQUEST **/
-	keyres: 'oifuypreh9034h0nxcbyrey8dhuphdipbufe88pfq8gcsfadr',
+	url: "https://pokeapi.co/api/v2/",
 
 
 	/** Fonts generals fields */

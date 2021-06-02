@@ -1,18 +1,14 @@
 {
   "expo": {
-    "name": "Elaniin Test",
-    "slug": "elaniin-test",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.1",
+    "name": "ElaniinTest",
+    "slug": "elaniintest",
+    "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "elaniintest",
+    "facebookScheme": "fb00000000",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,12 +18,10 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "facebookAppId": "1449421158781063",
-    "facebookDisplayName": "Test",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ro.elaniintest",
-      "buildNumber": "2.0.0",
+      "bundleIdentifier": "com.elaniin.test",
+      "buildNumber": "1.0.0",
       "infoPlist": {
         "UIBackgroundModes": [
           "location",
@@ -36,17 +30,25 @@
       }
     },
     "android": {
-      "package": "com.ro.elaniintest",
-      "versionCode": 2,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.elaniin.test",
+      "versionCode": 1,
       "permissions": [
         "READ_PHONE_STATE",
         "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION"
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "CAMERA_ROLL",
+        "MANAGE_DOCUMENTS",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
       ]
     },
     "web": {
-      "favicon": "./assets/images/favicon.png",
-    },
-    "description": "Test"
+      "favicon": "./assets/favicon.png"
+    }
   }
 }
