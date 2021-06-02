@@ -20,23 +20,14 @@ const ModalsSignup = ({navigation, visible = true, ...props }) => {
 
   const Action = () => {
     setModalVisible(!modalVisible);
-    if( props.ToHome ){
-      props.ToHome();
-    }else if( props.Action ){
-      props.Action();
-    }else if( props.CloseApp ){
-      props.CloseApp();
+    if( props.CloseApp ){
+      props.CloseApp(false);
     }
   }
 
   const closeAppSignal = () => {
     if( props.CloseApp ){
-      //
-      AsyncStorage.removeItem('currentUserAcces');
-      AsyncStorage.removeItem('currentUserShowName');
-      AsyncStorage.removeItem('currentToken');
-      navigation.navigate('Login');
-      props.CloseApp();
+      props.CloseApp(true);
     }
   }
 

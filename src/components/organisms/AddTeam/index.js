@@ -332,7 +332,7 @@ const AddTeamComponent = () => {
 
                     }).then( () => {
 
-                        Alert.alert('Eqipo añadido');
+                        Alert.alert('Equipo añadido');
                         setearTeams(contadorTeams);
 
                     }).catch((error) => { 
@@ -516,7 +516,7 @@ const AddTeamComponent = () => {
 
             <TouchableOpacity
                 style={{ width: '100%', alignSelf: 'center', justifyContent: 'center',
-                            alignContent: 'center', alignItems: 'center', height: 40, backgroundColor: GlobalVars.bluePantone,
+                            alignContent: 'center', alignItems: 'center', height: 40, backgroundColor: '#117864',
                             marginVertical: 15, borderRadius: 4, display: cargandoPokes ? 'none' : 'flex', }}
                 onPress={ () => { AddTeam(); }}
                 >

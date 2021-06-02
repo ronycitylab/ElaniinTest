@@ -84,8 +84,8 @@ const FirstScreen = ({navigation}) => {
         setAddteambytoken(!AddTeambyToken);
     }
 
-    const questionExit = () => {
-        setSalirapp(true);
+    const questionExit = (res) => {
+        CloseApp(res);
     }
 
     const clearAll = async () => {
@@ -108,16 +108,16 @@ const FirstScreen = ({navigation}) => {
                     contentContainerStyle={styles.contentContainer} >
 
                     <ButtonComponent color="blue" text="Equipos" Action={goToTeams} />
+
                     <ButtonComponent color="blue" text="Crear Equipo" Action={setearAddteam} />
-                    <ButtonComponent color="blue" text="Participar en un equipo (Token)" Action={setearAddteamBytoken} />
-                    
                     { AddTeam && <AddTeamComponent /> }
 
+                    <ButtonComponent color="blue" text="Participar en un equipo (Token)" Action={setearAddteamBytoken} />
                     { AddTeambyToken && <AddTeamByTokenComponent /> }
 
                     <View style={{ width: '100%', height: 20 }} ></View>
                     <ButtonComponent color="blue" text="Salir" Action={questionExit} />
-                    { salirApp && <ModalsSignup navigation={navigation} CloseApp={CloseApp} isSalirApp /> }
+                    { salirApp && <ModalsSignup navigation={navigation} CloseApp={questionExit} isSalirApp /> }
 
                 </ScrollView>
             </View>

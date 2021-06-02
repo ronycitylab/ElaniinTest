@@ -5,9 +5,6 @@ import { View, Platform, } from 'react-native';
 import Constants from 'expo-constants';
 import AsyncStorage from '@react-native-community/async-storage';
 
-/** Import Translations */
-import TranslateText from '../../../utils/useTranslations';
-
 /** Import Global Variables */
 import GlobalVars from '../../../global/globalVars';
 
